@@ -1,6 +1,6 @@
 {
-  "name": "ecommerce-inngest",
-  "version": "0.1.0",
+  "name": "nudekprime-store",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -13,7 +13,7 @@
     "axios": "^1.7.9",
     "cloudinary": "^2.5.1",
     "inngest": "^3.31.3",
-    "mongoose": "^8.10.0",
+    "mongoose": "^8.24.2",
     "next": "15.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
