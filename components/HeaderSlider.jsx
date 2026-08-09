@@ -6,27 +6,37 @@ const HeaderSlider = () => {
   const sliderData = [
     {
       id: 1,
-      title: "Experience Pure Sound - Your Perfect Headphones Awaits!",
-      offer: "Limited Time Offer 30% Off",
-      buttonText1: "Buy now",
-      buttonText2: "Find more",
-      imgSrc: assets.header_headphone_image,
+      title: "Discover Authentic Fugu Fabrics - Tradition Woven with Style!",
+      offer: "Quality Fugu Fabrics Available Now",
+      buttonText1: "Shop Fugu",
+      buttonText2: "Explore Collection",
+      imgSrc: assets.header_fugu_image,
+      
     },
     {
       id: 2,
-      title: "Next-Level Gaming Starts Here - Discover PlayStation 5 Today!",
-      offer: "Hurry up only few lefts!",
-      buttonText1: "Shop Now",
-      buttonText2: "Explore Deals",
-      imgSrc: assets.header_playstation_image,
+      title: "Discover Authentic Fugu Fabrics - Tradition Woven with Style!",
+      offer: "Quality Fugu Fabrics Available Now",
+      buttonText1: "Shop Fugu",
+      buttonText2: "Explore Collection",
+      imgSrc: assets.header_fugu_image_men,
+      
     },
     {
       id: 3,
-      title: "Power Meets Elegance - Apple MacBook Pro is Here for you!",
-      offer: "Exclusive Deal 40% Off",
-      buttonText1: "Order Now",
+      title: "Pure Natural Honey - Sweetness Straight from Nature!",
+      offer: "100% Natural & Delicious Honey",
+      buttonText1: "Buy Honey",
       buttonText2: "Learn More",
-      imgSrc: assets.header_macbook_image,
+      imgSrc: assets.header_honey_image,
+    },
+    {
+      id: 4,
+      title: "Traditional Style Meets Natural Goodness!",
+      offer: "Shop Our Fugu Fabrics & Premium Honey",
+      buttonText1: "Shop Now",
+      buttonText2: "Explore Products",
+      imgSrc: assets.header_fugu_honey_image,
     },
   ];
 

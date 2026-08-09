@@ -5,21 +5,24 @@ import Image from "next/image";
 const products = [
   {
     id: 1,
-    image: assets.girl_with_headphone_image,
-    title: "Unparalleled Sound",
-    description: "Experience crystal-clear audio with premium headphones.",
+    image: assets.fugu_fabric_image,
+    title: "Premium Fugu Fabrics",
+    description:
+      "Shop quality Fugu fabrics with beautiful traditional patterns made for elegant and authentic Ghanaian fashion.",
   },
   {
     id: 2,
-    image: assets.girl_with_earphone_image,
-    title: "Stay Connected",
-    description: "Compact and stylish earphones for every occasion.",
+    image: assets.header_honey_image,
+    title: "Pure Natural Honey",
+    description:
+      "Taste the goodness of naturally sourced honey, perfect for your everyday meals, drinks, and healthy lifestyle.",
   },
   {
     id: 3,
-    image: assets.boy_with_laptop_image,
-    title: "Power in Every Pixel",
-    description: "Shop the latest laptops for work, gaming, and more.",
+    image: assets.fugu_collection_image,
+    title: "Beautiful Fugu Collection",
+    description:
+      "Find the perfect Fugu fabric for your next outfit and celebrate Ghanaian heritage through timeless style.",
   },
 ];
 
