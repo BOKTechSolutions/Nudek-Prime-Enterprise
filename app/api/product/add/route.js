@@ -17,7 +17,7 @@ cloudinary.config({
 export async function POST(request) {
     try {
         
-        const { userId } = getAuth(request)
+        const { userId } = await getAuth(request)
 
         const isSeller = await authSeller(userId)
 
@@ -78,6 +78,6 @@ export async function POST(request) {
 
 
     } catch (error) {
-        NextResponse.json({ success: false, message: error.message })
+        return NextResponse.json({ success: false, message: error.message }, { status: 500 })
     }
 }
