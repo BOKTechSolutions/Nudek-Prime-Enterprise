@@ -1,3 +1,4 @@
+
 import React from "react";
 import { assets } from "@/assets/assets";
 import Image from "next/image";
@@ -28,33 +29,57 @@ const products = [
 
 const FeaturedProduct = () => {
   return (
-    <div className="mt-14">
+    <section className="mt-14">
+      {/* Section Title */}
       <div className="flex flex-col items-center">
-        <p className="text-3xl font-medium">Featured Products</p>
+        <p className="text-2xl sm:text-3xl font-medium">
+          Featured Products
+        </p>
+
         <div className="w-28 h-0.5 bg-orange-600 mt-2"></div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-14 mt-12 md:px-14 px-4">
+      {/* Products Grid */}
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-14 mt-8 sm:mt-12 px-3 sm:px-6 md:px-14">
         {products.map(({ id, image, title, description }) => (
-          <div key={id} className="relative group">
+          <div
+            key={id}
+            className="relative group w-full overflow-hidden rounded-lg"
+          >
+            {/* Product Image */}
             <Image
               src={image}
               alt={title}
-              className="group-hover:brightness-75 transition duration-300 w-full h-auto object-cover"
+              className="w-full h-44 sm:h-64 lg:h-80 object-cover group-hover:brightness-75 transition duration-300"
             />
-            <div className="group-hover:-translate-y-4 transition duration-300 absolute bottom-8 left-8 text-white space-y-2">
-              <p className="font-medium text-xl lg:text-2xl">{title}</p>
-              <p className="text-sm lg:text-base leading-5 max-w-60">
-                {description}
-              </p>
-              <button className="flex items-center gap-1.5 bg-orange-600 px-4 py-2 rounded">
-                Buy now <Image className="h-3 w-3" src={assets.redirect_icon} alt="Redirect Icon" />
-              </button>
+
+            {/* Product Details */}
+            <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/80 via-black/20 to-transparent p-2.5 sm:p-5 lg:p-7 text-white">
+              <div className="space-y-1.5 sm:space-y-2 transition duration-300 group-hover:-translate-y-1 sm:group-hover:-translate-y-2">
+                <p className="font-semibold text-sm sm:text-lg lg:text-2xl leading-tight">
+                  {title}
+                </p>
+
+                <p className="hidden sm:block text-sm lg:text-base leading-5 max-w-60">
+                  {description}
+                </p>
+
+                {/* Buy Button */}
+                <button className="flex items-center gap-1.5 bg-orange-600 hover:bg-orange-700 text-white text-xs sm:text-sm px-2.5 sm:px-4 py-1.5 sm:py-2 rounded transition">
+                  Buy now
+
+                  <Image
+                    className="h-3 w-3 object-contain"
+                    src={assets.redirect_icon}
+                    alt="Redirect Icon"
+                  />
+                </button>
+              </div>
             </div>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

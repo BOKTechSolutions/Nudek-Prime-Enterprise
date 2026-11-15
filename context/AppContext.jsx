@@ -63,32 +63,44 @@ export const AppContextProvider = (props) => {
         }
     }
 
-    const addToCart = async (itemId) => {
+ 
+const addToCart = async (itemId) => {
+    const cartData = { ...cartItems };
 
-        if (!user) {
-            return toast('Please login',{
-                icon: '⚠️',
-              })
-        }
-
-        let cartData = structuredClone(cartItems);
-        if (cartData[itemId]) {
-            cartData[itemId] += 1;
-        }
-        else {
-            cartData[itemId] = 1;
-        }
-        setCartItems(cartData);
-        if (user) {
-            try {
-                const token = await getToken()
-                await axios.post('/api/cart/update', {cartData}, {headers:{Authorization: `Bearer ${token}`}} )
-                toast.success('Item added to cart')
-            } catch (error) {
-                toast.error(error.message)
-            }
-        }
+    if (cartData[itemId]) {
+        cartData[itemId] += 1;
+    } else {
+        cartData[itemId] = 1;
     }
+
+    // Update the cart for both guests and signed-in customers.
+    setCartItems(cartData);
+
+    // Persist the cart to the database only for signed-in customers.
+    if (user) {
+        try {
+            const token = await getToken();
+
+            await axios.post(
+                "/api/cart/update",
+                { cartData },
+                {
+                    headers: {
+                        Authorization: `Bearer ${token}`,
+                    },
+                }
+            );
+
+            toast.success("Item added to cart");
+        } catch (error) {
+            console.error("Failed to save cart:", error);
+            toast.error("Cart updated locally, but failed to save to your account.");
+        }
+    } else {
+        toast.success("Item added to cart");
+    }
+};
+
 
     const updateCartQuantity = async (itemId, quantity) => {
 
